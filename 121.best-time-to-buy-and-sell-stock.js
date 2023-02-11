@@ -9,31 +9,26 @@
  * @param {number[]} prices
  * @return {number}
  */
-var maxProfit = function(prices) {
+var maxProfit = function (prices) {
+  // dp from end to start
 
-    // dp from end to start
+  if (!prices || prices.length < 1) return 0
 
-    if(!prices || prices.length < 1) return 0
+  let maxProfit = 0
+  const lasItem = prices.length - 1
+  let high = prices[lasItem]
 
-    let maxProfit = 0
-    const lasItem = prices.length - 1
-    let high = prices[lasItem]
+  for (let i = lasItem; i >= 0; i--) {
+    let profit = high - prices[i]
 
-    for (let i = lasItem; i >= 0; i--) {
-        
-        let profit = high - prices[i]
+    maxProfit = Math.max(maxProfit, profit)
+    high = Math.max(prices[i], high)
+  }
 
-        maxProfit = Math.max(maxProfit, profit)
-        high = Math.max(prices[i], high)
-    }
-
-
-    return maxProfit
-
-};
+  return maxProfit
+}
 // @lc code=end
 
-
 // @after-stub-for-debug-begin
-module.exports = maxProfit;
+module.exports = maxProfit
 // @after-stub-for-debug-end

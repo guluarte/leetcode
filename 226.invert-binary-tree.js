@@ -17,8 +17,9 @@
  * @param {TreeNode} root
  * @return {TreeNode}
  */
-var invertTree = function(root) {
-    
-};
+var invertTree = function (root) {}
 // @lc code=end
 
+// @after-stub-for-debug-begin
+module.exports = invertTree
+// @after-stub-for-debug-end
