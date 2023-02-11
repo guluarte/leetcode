@@ -17,7 +17,18 @@
  * @param {TreeNode} root
  * @return {TreeNode}
  */
-var invertTree = function (root) {}
+var invertTree = function (root) {
+  if (!root) return null
+
+  const right = root.right
+  const left = root.left
+
+  root.left = invertTree(right)
+  root.right = invertTree(left)
+
+  
+  return root
+}
 // @lc code=end
 
 // @after-stub-for-debug-begin
