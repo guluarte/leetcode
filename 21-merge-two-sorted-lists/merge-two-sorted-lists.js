@@ -38,11 +38,11 @@ var mergeTwoLists = function (list1, list2) {
     }
 
     while (head2) {
-        console.log(dummy)
         dummy.next = head2
         head2 = head2.next
         dummy = dummy.next
     }
+
     return first.next
 
 
