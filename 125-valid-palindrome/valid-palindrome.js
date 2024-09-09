@@ -16,7 +16,7 @@ var isPalindrome = function (s) {
             r--
             right = s[r].toUpperCase()
         }
-  
+
         if (left === right) {
             l++
             r--
