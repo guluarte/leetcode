@@ -16,7 +16,6 @@ class Solution(object):
 
         # Process each character in the string
         for char in s:
-            print("char has_digit, has_sign", char, has_digit, has_sign)
             # Skip leading whitespace
             if char == " ":
                 if has_sign:
@@ -35,15 +34,10 @@ class Solution(object):
                 has_sign = True
                 continue
             # If character is a digit, add to number string
-            if not char.isdigit() and has_sign:
-                print("not digit")
-                break
             if char.isdigit() or char == "0":
-                print("is digit")
                 num_str.append(char)
                 has_digit = True
             else:
-                print("not valid")
                 # Stop processing if we encounter non-digit (after optional sign)
                 break
 
